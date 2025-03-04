@@ -1,0 +1,197 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Putih */
+    color: black;
+    text-align: center;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0252ff; /* Warna biru tua */
+    color: white;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Branding */
+.branding {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #860aff;
+}
+
+/* Menu Toggle (Hamburger) */
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Hero Section (Menempel ke Header) */
+.hero {
+    background-color: #038dff; /* Warna biru muda */
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 58px; /* Supaya tidak tertutup oleh header */
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: white;
+}
+
+.hero p {
+    font-size: 18px;
+    color: white;
+}
+
+/* Menghapus Box di Semua Bagian */
+#tentang, #momen, #media {
+    background-color: transparent; /* Menghilangkan background */
+    padding: 50px;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Animasi Hover untuk Galeri */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.photo {
+    margin: 15px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.photo img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.photo:hover {
+    transform: scale(1.1);
+}
+
+/* Kontak Kami */
+#kontak {
+    background-color: #ffffff;
+    padding: 50px 20px;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-icons a {
+    color: #0252ff; /* Warna biru tua */
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact-icons i {
+    font-size: 30px;
+}
+
+.contact-icons a:hover {
+    color: #860aff;
+}
+
+/* Footer */
+footer {
+    background-color: #0252ff; /* Warna biru tua */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: #0252ff;
+        text-align: center;
+    }
+    
+    .navbar ul {
+        display: block;
+        padding: 10px 0;
+    }
+    
+    .navbar ul li {
+        padding: 10px 10px;
+    }
+
+    .navbar ul li a {
+        font-size: 18px;
+    }
+
+    /* Navbar muncul saat tombol ditekan */
+    .navbar.active {
+        display: block;
+    }
+}
