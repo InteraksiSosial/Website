@@ -71,25 +71,58 @@ header {
     display: none;
 }
 
-/* Hero Section (Menempel ke Header) */
+/* Hero Section dengan Background Gambar */
 .hero {
-    background-color: #038dff; /* Warna biru muda */
+    background: url('hero.jpg') center/cover no-repeat; /* Ganti dengan gambar JPG */
     height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    color: white;
+    position: relative;
+    text-align: center;
     margin-top: 58px; /* Supaya tidak tertutup oleh header */
 }
 
-.hero h1 {
-    font-size: 36px;
-    color: white;
+/* Overlay untuk Membuat Teks Lebih Jelas */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Efek gelap transparan */
 }
 
-.hero p {
-    font-size: 18px;
-    color: white;
+/* Teks dalam Hero Section */
+.hero h1, .hero p {
+    position: relative;
+    z-index: 1;
+}
+
+/* Tentang Kami */
+#tentang {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Judul "Tentang Kami" di Tengah */
+#tentang h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #000; /* Warna biru */
+    margin-bottom: 20px;
+}
+
+/* Paragraf tetap justify */
+#tentang p {
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 /* Menghapus Box di Semua Bagian */
@@ -122,43 +155,65 @@ header {
     transform: scale(1.1);
 }
 
-/* Kontak Kami */
-#kontak {
-    background-color: #ffffff;
-    padding: 50px 20px;
+/* Footer */
+footer {
+    background-color: #0252ff;
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    margin-top: 10px;
 }
 
-.contact-icons {
+/* Bagian Logo Teks dan Paragraf */
+.footer-content {
+    margin-bottom: 40px; /* Agar tidak mepet ke atas */
+}
+
+footer h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Bagian Informasi Kontak */
+.footer-kontak {
+    margin: 20px 0;
+}
+
+.footer-kontak h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Ikon Kontak */
+.footer-icons {
     display: flex;
     justify-content: center;
     gap: 15px;
+}
+
+.footer-icons a {
+    display: inline-block;
+}
+
+.footer-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-icons img:hover {
+    transform: scale(1.2); /* Animasi membesar saat hover */
+}
+
+/* Copyright */
+.copyright {
     margin-top: 20px;
-}
-
-.contact-icons a {
-    color: #0252ff; /* Warna biru tua */
-    font-size: 20px;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.contact-icons i {
-    font-size: 30px;
-}
-
-.contact-icons a:hover {
-    color: #860aff;
-}
-
-/* Footer */
-footer {
-    background-color: #0252ff; /* Warna biru tua */
-    color: white;
-    text-align: center;
-    padding: 10px 0;
+    font-size: 15px;
 }
 
 /* Responsive */
@@ -194,4 +249,4 @@ footer {
     .navbar.active {
         display: block;
     }
-}
+    }
